@@ -32,3 +32,9 @@ $ node example/scripts/docs-html.js
 ```
 
 This will generate an example site in `example/app` with the theme.
+
+### Fire a server and listen for changes
+
+```bash
+$ npx documentation serve --watch **/_types/*.js **/lib/helper.js **/*._ --theme .
+```
