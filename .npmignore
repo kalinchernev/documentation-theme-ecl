@@ -1,0 +1,8 @@
+.editorconfig
+.eslintignore
+.eslintrc
+.gitattributes
+.gitignore
+.babelrc
+__tests__
+example

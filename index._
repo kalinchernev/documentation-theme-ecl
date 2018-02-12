@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%- config["project-name"] %> | Documentation: <%- config["project-version"] %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#034ea1">
+  <meta name="msapplication-TileColor" content="#034ea1">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-touch-icon-144x144.png">
+  <meta name="msapplication-square70x70logo" content="assets/favicon/mstile-70x70.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-touch-icon-120x120.png">
+  <meta name="msapplication-square150x150logo" content="assets/favicon/mstile-150x150.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png">
+  <meta name="msapplication-square310x310logo" content="assets/favicon/mstile-310x310.png">
+  <meta name="msapplication-wide310x150logo" content="assets/favicon/mstile-310x150.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-touch-icon-114x114.png">
+  <meta name="msapplication-TileImage" content="assets/favicon/mstile-144x144.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-touch-icon-60x60.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="themes/ecl-fractal-theme/favicon.ico" type="image/ico">
+  <link href="assets/github.css" type="text/css" rel="stylesheet">
+  <link href="https://ec-europa.github.io/europa-component-library/framework/styles/europa.css" type="text/css" rel="stylesheet">
+</head>
+<body class="language-en">
+  <div class="ecl-skip-link__wrapper" id="skip-link">
+    <a href="#main-content" class="ecl-skip-link">Skip to main content</a>
+  </div>
+  <%= renderHeader({ config }) %>
+  <main>
+    <a id="main-content" tabindex="-1"></a>
+    <div class="ecl-container ecl-u-mv-l">
+      <div class="ecl-row">
+        <aside class="ecl-col-lg-3" role="complementary">
+          <h3 class="ecl-heading ecl-heading--h3">Filter</h3>
+          <input placeholder="Filter" id="filter-input"
+          type="text" class="ecl-text-input" name="filter-input">
+          <h3 class="ecl-heading ecl-heading--h3">Interfaces</h3>
+          <div class="ecl-link-block" id="toc">
+            <ul class="ecl-link-block__list">
+              <% docs.forEach(function(doc) { %>
+                <% var hasMembers = doc.members.static.length || doc.members.instance.length %>
+                <li class="ecl-link-block__item">
+                  <a href="#<%=slug(doc.namespace)%>"
+                     class="ecl-link ecl-link--standalone ecl-link-block__link">
+                    <%- doc.name %>
+                  </a>
+                <% if (hasMembers) { %>
+                  <% if (doc.members.static && doc.members.static.length) { %>
+                  <ul class="ecl-list">
+                    <% doc.members.static.forEach(function(member) { %>
+                      <li><a
+                        href="#<%=slug(member.namespace)%>"
+                        class="ecl-link pre-open">
+                        <%- member.name %>
+                      </a></li>
+                    <% }) %>
+                    </ul>
+                  <% } %>
+                <% } %>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+        </aside>
+        <section class="ecl-col-lg-9">
+          <% docs.forEach(function(s) { %>
+            <% if (s.kind !== "note") { %>
+              <%= renderSection({
+                    section: s,
+                    renderSection: renderSection,
+                    renderSectionList: renderSectionList,
+                    renderParamProperty: renderParamProperty
+                  }) %>
+                  <% } else { %>
+          <div class="keyline-top-not py2">
+            <%= renderNote({ note: s })%>
+          </div><% } %><% }) %>
+        </section>
+      </div>
+    </div>
+  </main>
+  <%= renderFooter() %>
+  <script src="assets/anchor.js"></script>
+  <script src="assets/site.js"></script>
+</body>
+</html>

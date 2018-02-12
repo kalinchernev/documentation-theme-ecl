@@ -1,0 +1,12 @@
+---
+  root: true
+  extends:
+    - airbnb-base
+    - prettier
+    - plugin:flowtype/recommended
+  plugins:
+    - prettier
+    - flowtype
+  env:
+    browser: true
+    node: true
