@@ -1,6 +1,6 @@
 # ECL theme for documentation.js
 
-This is a custom theme for [documentationjs](https://github.com/documentationjs):
+This is a custom theme for [documentation.js](http://documentation.js.org):
 it consists of underscore templates and a few assets: a [highlight.js](https://highlightjs.org/)
 theme and the base of [ECL](https://github.com/ec-europa/europa-component-library)
 
@@ -13,7 +13,7 @@ Use the [documentation.js CLI](https://github.com/documentationjs/documentation/
 Example:
 
 ```bash
-$ npx documentation.js build **/your-files.js -f md --theme documentation-theme-ecl
+$ npx documentation build **/_types/*.js --theme . -f html -o example/app
 ```
 
 Where the `--theme` flag should point to the module (index.js) of the theme.
