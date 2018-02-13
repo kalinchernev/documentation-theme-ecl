@@ -38,3 +38,16 @@ This will generate an example site in `example/app` with the theme.
 ```bash
 $ npx documentation serve --watch **/_types/*.js **/lib/helper.js **/*._ --theme .
 ```
+
+In this case, you will still need to refresh the page with the example app manually.
+
+### Just code
+
+```bash
+$ yarn develop
+```
+
+This is going to run 2 tasks in parallel:
+
+* documentation build task in watch mode on `src/` outputting results in `example/app`.
+* hot [`reload`](https://www.npmjs.com/package/reload) server of `example/app`.
