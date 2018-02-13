@@ -5,13 +5,18 @@
   "description": "ECL theme for documentation.js",
   "main": "index.js",
   "scripts": {
-    "develop": "run-p development:*",
+    "clean": "rm -rf ./example/app",
+    "build": "documentation build ./src --theme . -f html -o ./example/app",
+    "bundle": "webpack",
+    "develop": "run-p develop:*",
+    "develop:builder": "documentation build --watch ./src --theme . -f html -o ./example/app",
+    "develop:server": "reload -d ./example/app",
+    "develop:js": "webpack -w",
     "lint": "eslint .",
-    "development:server": "reload -d ./example/app",
-    "development:builder":
-      "documentation build --watch src/* --theme . -f html -o example/app"
+    "start": "run-s clean bundle build develop"
   },
   "dependencies": {
+    "anchor-js": "4.1.0",
     "concat-stream": "1.6.0",
     "documentation": "5.3.5",
     "github-slugger": "1.2.0",
@@ -30,6 +35,8 @@
     "eslint-plugin-flowtype": "2.43.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-prettier": "2.6.0",
-    "reload": "2.2.2"
+    "npm-run-all": "4.1.2",
+    "reload": "2.2.2",
+    "webpack": "3.11.0"
   }
 }

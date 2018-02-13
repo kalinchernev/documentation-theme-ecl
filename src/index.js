@@ -1,21 +1,23 @@
-/* global anchors */
+import anchorJS from "anchor-js";
+
+const anchors = new anchorJS();
 
 // add anchor links to headers
-anchors.options.placement = 'left';
-anchors.add('h3');
+anchors.options.placement = "left";
+anchors.add("h3");
 
 // Filter UI
-const tocElements = document.getElementById('toc').getElementsByTagName('li');
+const tocElements = document.getElementById("toc").getElementsByTagName("li");
 
-document.getElementById('filter-input').addEventListener('keyup', function(e) {
+document.getElementById("filter-input").addEventListener("keyup", function(e) {
   let i, element, children;
 
-  // enter key
+  // enter key..
   if (e.keyCode === 13) {
     // go to the first displayed item in the toc
     for (i = 0; i < tocElements.length; i++) {
       element = tocElements[i];
-      if (!element.classList.contains('ecl-u-d-none')) {
+      if (!element.classList.contains("ecl-u-d-none")) {
         location.replace(element.firstChild.href);
         return e.preventDefault();
       }
@@ -37,32 +39,32 @@ document.getElementById('filter-input').addEventListener('keyup', function(e) {
 
   for (i = 0; i < tocElements.length; i++) {
     element = tocElements[i];
-    children = Array.from(element.getElementsByTagName('li'));
+    children = Array.from(element.getElementsByTagName("li"));
     if (match(element) || children.some(match)) {
-      element.classList.remove('ecl-u-d-none');
+      element.classList.remove("ecl-u-d-none");
     } else {
-      element.classList.add('ecl-u-d-none');
+      element.classList.add("ecl-u-d-none");
     }
   }
 });
 
-const items = document.getElementsByClassName('toggle-sibling');
+const items = document.getElementsByClassName("toggle-sibling");
 for (let j = 0; j < items.length; j++) {
-  items[j].addEventListener('click', toggleSibling);
+  items[j].addEventListener("click", toggleSibling);
 }
 
 function toggleSibling() {
   const stepSibling = this.parentNode.getElementsByClassName(
-    'toggle-target'
+    "toggle-target"
   )[0];
-  const icon = this.getElementsByClassName('icon')[0];
-  const klass = 'ecl-u-d-none';
+  const icon = this.getElementsByClassName("icon")[0];
+  const klass = "ecl-u-d-none";
   if (stepSibling.classList.contains(klass)) {
     stepSibling.classList.remove(klass);
-    icon.innerHTML = '▾';
+    icon.innerHTML = "▾";
   } else {
     stepSibling.classList.add(klass);
-    icon.innerHTML = '▸';
+    icon.innerHTML = "▸";
   }
 }
 
@@ -73,9 +75,9 @@ function showHashTarget(targetId) {
     if (
       hashTarget &&
       hashTarget.offsetHeight === 0 &&
-      hashTarget.parentNode.parentNode.classList.contains('ecl-u-d-none')
+      hashTarget.parentNode.parentNode.classList.contains("ecl-u-d-none")
     ) {
-      hashTarget.parentNode.parentNode.classList.remove('ecl-u-d-none');
+      hashTarget.parentNode.parentNode.classList.remove("ecl-u-d-none");
     }
   }
 }
@@ -95,12 +97,12 @@ function gotoCurrentTarget() {
   scrollIntoView(location.hash.substring(1));
 }
 
-window.addEventListener('hashchange', gotoCurrentTarget);
+window.addEventListener("hashchange", gotoCurrentTarget);
 gotoCurrentTarget();
 
-const toclinks = document.getElementsByClassName('pre-open');
+const toclinks = document.getElementsByClassName("pre-open");
 for (let k = 0; k < toclinks.length; k++) {
-  toclinks[k].addEventListener('mousedown', preOpen, false);
+  toclinks[k].addEventListener("mousedown", preOpen, false);
 }
 
 function preOpen() {
