@@ -1,9 +1,8 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "./src/assets"),
-    filename: "bundle.js"
+  entry: {
+    theme: "./theme/assets/theme.js",
+    ecl: "./theme/assets/ecl.js"
   }
 };

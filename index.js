@@ -1,3 +1,5 @@
+// documentation.js module file
+// ... not for bundlers
 const fs = require("fs");
 const path = require("path");
 const File = require("vinyl");
@@ -85,25 +87,25 @@ module.exports = (comments, config) => {
 
   sharedImports.imports.renderSectionList = _.template(
     fs.readFileSync(
-      path.join(__dirname, "/src/partials/section_list._"),
+      path.join(__dirname, "/theme/partials/section_list._"),
       "utf8"
     ),
     sharedImports
   );
 
   sharedImports.imports.renderSection = _.template(
-    fs.readFileSync(path.join(__dirname, "/src/partials/section._"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "/theme/partials/section._"), "utf8"),
     sharedImports
   );
 
   sharedImports.imports.renderNote = _.template(
-    fs.readFileSync(path.join(__dirname, "/src/partials/note._"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "/theme/partials/note._"), "utf8"),
     sharedImports
   );
 
   sharedImports.imports.renderParamProperty = _.template(
     fs.readFileSync(
-      path.join(__dirname, "/src/partials/paramProperty._"),
+      path.join(__dirname, "/theme/partials/paramProperty._"),
       "utf8"
     ),
     sharedImports
@@ -111,39 +113,44 @@ module.exports = (comments, config) => {
 
   // ECL static partials
   sharedImports.imports.renderHeader = _.template(
-    fs.readFileSync(path.join(__dirname, "/src/partials/header._"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "/theme/partials/header._"), "utf8"),
     sharedImports
   );
 
   sharedImports.imports.renderFooter = _.template(
-    fs.readFileSync(path.join(__dirname, "/src/partials/footer._"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "/theme/partials/footer._"), "utf8"),
     sharedImports
   );
 
   const pageTemplate = _.template(
-    fs.readFileSync(path.join(__dirname, "src/index._"), "utf8"),
+    fs.readFileSync(path.join(__dirname, "theme/index._"), "utf8"),
     sharedImports
   );
 
   // push assets into the pipeline as well.
   return new Promise(resolve => {
-    vfs.src([`${__dirname}/src/assets/**`], { base: __dirname }).pipe(
-      concat(files => {
-        resolve(
-          files.concat(
-            new File({
-              path: "index.html",
-              contents: new Buffer(
-                pageTemplate({
-                  docs: comments,
-                  config
-                }),
-                "utf8"
-              )
-            })
-          )
-        );
+    vfs
+      // the result of the bundler which interests the user in the end
+      .src([`${__dirname}/theme/assets/bundle/**`], {
+        base: __dirname
       })
-    );
+      .pipe(
+        concat(files => {
+          resolve(
+            files.concat(
+              new File({
+                path: "index.html",
+                contents: new Buffer(
+                  pageTemplate({
+                    docs: comments,
+                    config
+                  }),
+                  "utf8"
+                )
+              })
+            )
+          );
+        })
+      );
   });
 };

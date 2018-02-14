@@ -6,25 +6,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#034ea1">
   <meta name="msapplication-TileColor" content="#034ea1">
-  <link rel="apple-touch-icon" sizes="144x144" href="src/assets/favicon/apple-touch-icon-144x144.png">
-  <meta name="msapplication-square70x70logo" content="src/assets/favicon/mstile-70x70.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="src/assets/favicon/apple-touch-icon-120x120.png">
-  <meta name="msapplication-square150x150logo" content="src/assets/favicon/mstile-150x150.png">
-  <link rel="apple-touch-icon" sizes="57x57" href="src/assets/favicon/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="src/assets/favicon/apple-touch-icon-152x152.png">
-  <meta name="msapplication-square310x310logo" content="src/assets/favicon/mstile-310x310.png">
-  <meta name="msapplication-wide310x150logo" content="src/assets/favicon/mstile-310x150.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="src/assets/favicon/apple-touch-icon-114x114.png">
-  <meta name="msapplication-TileImage" content="src/assets/favicon/mstile-144x144.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/favicon/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="src/assets/favicon/android-chrome-192x192.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="src/assets/favicon/apple-touch-icon-60x60.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/favicon/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="src/assets/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="theme/assets/bundle/favicon/apple-touch-icon-144x144.png">
+  <meta name="msapplication-square70x70logo" content="theme/assets/bundle/favicon/mstile-70x70.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="theme/assets/bundle/favicon/apple-touch-icon-120x120.png">
+  <meta name="msapplication-square150x150logo" content="theme/assets/bundle/favicon/mstile-150x150.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="theme/assets/bundle/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="theme/assets/bundle/favicon/apple-touch-icon-152x152.png">
+  <meta name="msapplication-square310x310logo" content="theme/assets/bundle/favicon/mstile-310x310.png">
+  <meta name="msapplication-wide310x150logo" content="theme/assets/bundle/favicon/mstile-310x150.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="theme/assets/bundle/favicon/apple-touch-icon-114x114.png">
+  <meta name="msapplication-TileImage" content="theme/assets/bundle/favicon/mstile-144x144.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="theme/assets/bundle/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="theme/assets/bundle/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="theme/assets/bundle/favicon/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="theme/assets/bundle/favicon/apple-touch-icon-60x60.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="theme/assets/bundle/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="theme/assets/bundle/favicon/favicon-96x96.png">
   <link rel="shortcut icon" href="themes/ecl-fractal-theme/favicon.ico" type="image/ico">
-  <link href="src/assets/github.css" type="text/css" rel="stylesheet">
-  <link href="https://ec-europa.github.io/europa-component-library/framework/styles/europa.css" type="text/css" rel="stylesheet">
+  <link href="theme/assets/bundle/main.css" type="text/css" rel="stylesheet">
 </head>
 <body class="language-en">
   <div class="ecl-skip-link__wrapper" id="skip-link">
@@ -85,6 +84,6 @@
     </div>
   </main>
   <%= renderFooter() %>
-  <script src="src/assets/bundle.js"></script>
+  <script src="theme/assets/bundle/main.js"></script>
 </body>
 </html>
