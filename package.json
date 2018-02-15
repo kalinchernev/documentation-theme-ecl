@@ -9,7 +9,7 @@
     "build": "documentation build example/src --theme . -f html -o ./dist",
     "bundle": "webpack",
     "develop": "run-p develop:*",
-    "develop:theme": "documentation build --watch ./example/src ./theme/** --theme . -f html -o ./dist",
+    "develop:theme": "documentation build --watch ./example/src ./** --theme . -f html -o ./dist",
     "develop:server": "reload -d ./dist",
     "develop:assets": "webpack -w",
     "dist": "run-s clean bundle build",
