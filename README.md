@@ -47,16 +47,14 @@ In this case, you will still need to refresh the page with the example app manua
 $ yarn start
 ```
 
-This is going to do the following:
+This is going to do create a working environment in `dist/` folder.
 
-* clean older example app
-* bundle the client-side JavaScript assets for the first time
-* documentation build on `src/` outputting results in `example/app`
+* clean older one
+* bundle assets for the first time in specific folder `bundle`
+* documentation build taking templates and generating markup
 
-Then, when the above are ready, watch tasks will start in parallel:
+Then, when the above are ready, _watch tasks_ will start in parallel:
 
 * documentation re-build
-* client-side JavaScript re-bundle
-* hot [`reload`](https://www.npmjs.com/package/reload) server of `example/app`
-
-By these, any updates on templates, client-side JavaScript and any other assets in `./src` will automatically reload the browser displaying the example app.
+* assets' bundles rebuild
+* hot [`reload`](https://www.npmjs.com/package/reload) server
