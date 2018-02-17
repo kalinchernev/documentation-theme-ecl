@@ -24,6 +24,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
   <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/ico">
   <link href="assets/bundle/main.css" type="text/css" rel="stylesheet">
+  <link href="assets/vendor/ecl/styles/europa.css" type="text/css" rel="stylesheet">
 </head>
 <body class="language-en">
   <div class="ecl-skip-link__wrapper" id="skip-link">
@@ -85,5 +86,6 @@
   </main>
   <%= renderFooter() %>
   <script src="assets/bundle/main.js"></script>
+  <script src="assets/vendor/ecl/scripts/europa.js"></script>
 </body>
 </html>

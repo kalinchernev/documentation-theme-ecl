@@ -3,7 +3,7 @@ import anchorJS from "anchor-js";
 const anchors = new anchorJS();
 
 // add anchor links to headers
-anchors.options.placement = "left";
+anchors.options.placement = "right";
 anchors.add("h3");
 
 // Filter UI

@@ -4,6 +4,12 @@ This is a custom theme for [documentation.js](http://documentation.js.org):
 it consists of underscore templates and a few assets: a [highlight.js](https://highlightjs.org/)
 theme and the base of [ECL](https://github.com/ec-europa/europa-component-library)
 
+Requirements:
+
+* Node.js current (8.x)
+* `yarn` or `npm`
+* `wget` (downloading ECL releases)
+
 ## Usage
 
 ### CLI
@@ -49,7 +55,8 @@ $ yarn start
 
 This is going to do create a working environment in `dist/` folder.
 
-* clean older one
+* clean older working environment
+* download ECL release (< 1MB) and add it to the theme `vendor` folder
 * bundle assets for the first time in specific folder `bundle`
 * documentation build taking templates and generating markup
 

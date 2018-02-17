@@ -9,12 +9,13 @@
     "build": "documentation build example/src --theme . -f html -o ./dist",
     "bundle": "webpack",
     "develop": "run-p develop:*",
-    "develop:theme": "documentation build --watch ./example/src ./** --theme . -f html -o ./dist",
+    "develop:theme": "documentation build --watch ./example/src **/*._ *._ ./assets/js ./assets/styles --theme . -f html -o ./dist",
     "develop:server": "reload -d ./dist",
     "develop:assets": "webpack -w",
     "dist": "run-s clean bundle build",
+    "get:ecl": "./scripts/getEcl.sh",
     "lint": "eslint .",
-    "start": "run-s clean bundle build develop"
+    "start": "run-s clean get:ecl bundle build develop"
   },
   "dependencies": {
     "@ec-europa/ecl-preset-full": "0.6.0",

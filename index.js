@@ -126,7 +126,11 @@ module.exports = (comments, config) => {
     vfs
       // the result of the bundler which interests the user in the end
       .src(
-        [`${__dirname}/assets/bundle/**`, `${__dirname}/assets/favicon/**`],
+        [
+          `${__dirname}/assets/bundle/**`,
+          `${__dirname}/assets/vendor/**`,
+          `${__dirname}/assets/favicon/**`
+        ],
         {
           base: __dirname
         }
