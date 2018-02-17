@@ -68,6 +68,7 @@
           </div>
         </aside>
         <section class="ecl-col-lg-9">
+          <ul class="ecl-listing">
           <% docs.forEach(function(s) { %>
             <% if (s.kind !== "note") { %>
               <%= renderSection({
@@ -80,6 +81,7 @@
           <div>
             <%= renderNote({ note: s })%>
           </div><% } %><% }) %>
+          <ul>
         </section>
       </div>
     </div>

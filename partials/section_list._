@@ -1,6 +1,6 @@
 <section class='ecl-u-clearfix ecl-u-pv-xs'>
   <% members.forEach(function(member) { %>
-    <a id='<%- slug(member.namespace) %>' class="ecl-link ecl-expandable__button" aria-controls='<%- slug(member.namespace) %>-panel' aria-expanded="true" href="#">
+    <a id='<%- slug(member.namespace) %>' class="ecl-link ecl-link--standalone" aria-controls='<%- slug(member.namespace) %>-panel' aria-expanded="true" href="#">
       <%= shortSignature(member) %>
     </a>
     <div id='<%- slug(member.namespace) %>-panel' aria-labelledby='<%- slug(member.namespace) %>' aria-hidden="false">

@@ -1,6 +1,5 @@
-<section class='ecl-u-clearfix ecl-u-pv-xs'>
+<li class='ecl-list-item ecl-u-pv-m'>
   <% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
-  <div class='ecl-u-clearfix'>
     <% if (typeof nested === 'undefined') { %>
     <h3 class='ecl-heading ecl-heading--h3' id='<%- slug(section.namespace) %>'>
       <%- section.name %>
@@ -8,29 +7,24 @@
     <% } %>
     <% if (section.context && section.context.github) { %>
       <a class='ecl-link' href='<%= section.context.github.url %>'>
-      <span><%= section.context.github.path %></span>
+        <%= section.context.github.path %>
       </a>
     <% } %>
-  </div>
   <% } %>
 
   <%= md(section.description) %>
 
-  <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
   <% if (section.type) { %>
-    <p>
-      Type:
-      <%= formatType(section.type) %>
-    </p>
+    <p class="ecl-paragraph">Type: <%= formatType(section.type) %></p>
   <% } %>
   <% if (section.augments.length) { %>
-    <p>
+    <p class="ecl-paragraph">
       Extends
       <% if (section.augments) { %>
         <%= section.augments.map(function(tag) {
-	  return autolink(tag.name);
-	}).join(', ') %>
-      <% } %>
+	         return autolink(tag.name);
+	         }).join(', ') %>
+       <% } %>
     </p>
   <% } %>
 
@@ -42,8 +36,8 @@
   <% if (section.since) { %><div>Since: <%- section.since %></div><% }%>
 
   <% if (section.params.length) { %>
-    <div>Parameters</div>
-    <div class='prose'>
+    <h4 class="ecl-heading ecl-heading--h4">Parameters</h4>
+    <p class='ecl-paragraph'>
       <% section.params.forEach(function(param) { %>
         <div class='space-bottom0'>
           <div>
@@ -75,14 +69,14 @@
           <% } %>
         </div>
       <% }) %>
-    </div>
+    </p>
   <% } %>
 
   <% if (section.properties.length) { %>
-    <div>Properties</div>
-    <div>
+    <h4 class="ecl-heading ecl-heading--h4">Properties</h4>
+      <ul class="ecl-list">
       <% section.properties.forEach(function(property) { %>
-        <div class='space-bottom0'>
+        <li>
           <span class='code bold'><%- property.name%></span> <code class='quiet'>(<%= formatType(property.type) %>)</code>
           <% if (property.default) { %>
             (default <code><%- property.default %></code>)
@@ -100,14 +94,14 @@
               <% }) %>
             </ul>
           <% } %>
-        </div>
+        </li>
       <% }) %>
-    </div>
+      </ul>
   <% } %>
 
   <% if (section.returns.length) { %>
     <% section.returns.forEach(function(ret) { %>
-      <div>Returns</div>
+      <h4 class="ecl-heading ecl-heading--h4">Returns</h4>
       <code><%= formatType(ret.type) %></code><% if (ret.description) { %>:
         <%= md(ret.description, true) %>
       <% }%>
@@ -115,8 +109,8 @@
   <% } %>
 
   <% if (section.throws.length) { %>
-    <div>Throws</div>
-    <ul>
+    <h4 class="ecl-heading ecl-heading--h4">Throws</h4>
+    <ul class="ecl-list">
       <% section.throws.forEach(function(throws) { %>
         <li><%= formatType(throws.type) %>: <%= md(throws.description, true) %></li>
       <% }); %>
@@ -126,7 +120,7 @@
   <% if (section.examples.length) { %>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     <% section.examples.forEach(function(example) { %>
-      <% if (example.caption) { %><p><%= md(example.caption) %></p><% } %>
+      <% if (example.caption) { %><p class="ecl-paragraph"><%= md(example.caption) %></p><% } %>
       <pre style="background-color: #f5f5f5; overflow: scroll;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
     <% }) %>
   <% } %>
@@ -142,4 +136,4 @@
   <% if (section.members.events && section.members.events.length) { %>
     <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
   <% } %>
-</section>
+</li>
