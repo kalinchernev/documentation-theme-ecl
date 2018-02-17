@@ -2,7 +2,7 @@
 
 This is a custom theme for [documentation.js](http://documentation.js.org): it consists of underscore templates and a few assets: a [highlight.js](https://highlightjs.org/) theme and the base of [ECL](https://github.com/ec-europa/europa-component-library)
 
-![Example documentation theme based on ECL](./example/screenshot.png)
+![Example documentation theme based on ECL](https://github.com/kalinchernev/documentation-theme-ecl/raw/master/example/screenshot.png)
 
 ## Usage
 

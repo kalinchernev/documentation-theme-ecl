@@ -5,7 +5,6 @@
 .gitignore
 .babelrc
 __tests__
-example
 __MACOSX
 dist
 scripts
