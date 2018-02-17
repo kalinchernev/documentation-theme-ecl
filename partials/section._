@@ -14,9 +14,6 @@
 
   <%= md(section.description) %>
 
-  <% if (section.type) { %>
-    <p class="ecl-paragraph">Type: <%= formatType(section.type) %></p>
-  <% } %>
   <% if (section.augments.length) { %>
     <p class="ecl-paragraph">
       Extends
@@ -24,7 +21,7 @@
         <%= section.augments.map(function(tag) {
 	         return autolink(tag.name);
 	         }).join(', ') %>
-       <% } %>
+      <% } %>
     </p>
   <% } %>
 
@@ -38,26 +35,24 @@
   <% if (section.params.length) { %>
     <h4 class="ecl-heading ecl-heading--h4">Parameters</h4>
     <p class='ecl-paragraph'>
+      <ul class="ecl-list">
       <% section.params.forEach(function(param) { %>
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'><%- param.name%></span> <code class='quiet'>(<%= formatType(param.type) %><% if (param.default) { %>
-            = <code><%- param.default %></code><% } %>)</code>
-	    <%= md(param.description, true) %>
-          </div>
+        <li><%- param.name%> (<%= formatType(param.type) %><% if (param.default) { %>
+            = <%- param.default %><% } %>)
+	        <%= md(param.description, true) %>
           <% if (param.properties && param.properties.length) { %>
-          <table class='mt1 mb2 fixed-table h5 col-12'>
+          <table class='ecl-table'>
             <colgroup>
               <col width='30%' />
               <col width='70%' />
             </colgroup>
             <thead>
-              <tr class='bold fill-light'>
+              <tr>
                 <th>Name</th>
                 <th>Description</th>
               </tr>
             </thead>
-            <tbody class='mt1'>
+            <tbody>
               <% param.properties.forEach(function(property) { %>
                 <%= renderParamProperty({
                   property: property,
@@ -67,33 +62,38 @@
             </tbody>
           </table>
           <% } %>
-        </div>
+        </li>
       <% }) %>
+      </ul>
     </p>
   <% } %>
 
   <% if (section.properties.length) { %>
     <h4 class="ecl-heading ecl-heading--h4">Properties</h4>
       <ul class="ecl-list">
-      <% section.properties.forEach(function(property) { %>
-        <li>
-          <span class='code bold'><%- property.name%></span> <code class='quiet'>(<%= formatType(property.type) %>)</code>
-          <% if (property.default) { %>
-            (default <code><%- property.default %></code>)
-          <% } %><% if (property.description) {
-	    %>: <%= md(property.description, true) %><%
-	  } %>
-          <% if (property.properties && property.properties.length) { %>
-            <ul>
-              <% property.properties.forEach(function(property) { %>
-                <li><code><%- property.name %></code> <%= formatType(property.type) %>
-                  <% if (property.default) { %>
-                    (default <code><%- property.default %></code>)
-                  <% } %>
-                  <%= md(property.description) %></li>
-              <% }) %>
-            </ul>
-          <% } %>
+        <% section.properties.forEach(function(property) { %>
+          <li>
+            <%- property.name%> (<%= formatType(property.type) %>)
+            <% if (property.default) { %>
+              (default <%- property.default %>)
+            <% } %>
+            <% if (property.description) { %>:
+              <%= md(property.description, true) %><%
+	          } %>
+            <% if (property.properties && property.properties.length) { %>
+              <ul class='ecl-list'>
+                <% property.properties.forEach(function(property) { %>
+                  <li>
+                    <%- property.name %>
+                    <%= formatType(property.type) %>
+                    <% if (property.default) { %>
+                      (default <%- property.default %>)
+                    <% } %>
+                    <%= md(property.description) %>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } %>
         </li>
       <% }) %>
       </ul>
@@ -102,7 +102,8 @@
   <% if (section.returns.length) { %>
     <% section.returns.forEach(function(ret) { %>
       <h4 class="ecl-heading ecl-heading--h4">Returns</h4>
-      <code><%= formatType(ret.type) %></code><% if (ret.description) { %>:
+      <%= formatType(ret.type) %>
+      <% if (ret.description) { %>:
         <%= md(ret.description, true) %>
       <% }%>
     <% }) %>
@@ -118,15 +119,17 @@
   <% } %>
 
   <% if (section.examples.length) { %>
-    <div class='py1 quiet mt1 prose-big'>Example</div>
+    <h4 class="ecl-heading ecl-heading--h4">Example</h4>
     <% section.examples.forEach(function(example) { %>
       <% if (example.caption) { %><p class="ecl-paragraph"><%= md(example.caption) %></p><% } %>
-      <pre style="background-color: #f5f5f5; overflow: scroll;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
+      <pre style="background-color: #f5f5f5;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
     <% }) %>
   <% } %>
 
   <% if (section.members.static && section.members.static.length) { %>
+    <ul class="ecl-list">
     <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty}) %>
+    </ul>
   <% } %>
 
   <% if (section.members.instance && section.members.instance.length) { %>
