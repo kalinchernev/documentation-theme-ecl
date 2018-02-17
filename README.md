@@ -1,14 +1,8 @@
 # ECL theme for documentation.js
 
-This is a custom theme for [documentation.js](http://documentation.js.org):
-it consists of underscore templates and a few assets: a [highlight.js](https://highlightjs.org/)
-theme and the base of [ECL](https://github.com/ec-europa/europa-component-library)
+This is a custom theme for [documentation.js](http://documentation.js.org): it consists of underscore templates and a few assets: a [highlight.js](https://highlightjs.org/) theme and the base of [ECL](https://github.com/ec-europa/europa-component-library)
 
-Requirements:
-
-* Node.js current (8.x)
-* `yarn` or `npm`
-* `wget` (downloading ECL releases)
+![Example documentation theme based on ECL](./example/screenshot.png)
 
 ## Usage
 
@@ -29,7 +23,13 @@ Where the `--theme` flag should point to the module (index.js) of the theme.
 See [the html generation script](./example/scripts/docs-html.js) for an example of the
 `formats.html` method as pointed out in the [documentation pages](https://github.com/documentationjs/documentation/blob/master/docs/NODE_API.md).
 
-## Developing
+## Theme development
+
+Requirements:
+
+* Node.js current (8.x)
+* `yarn` or `npm`
+* `wget` (downloading ECL releases)
 
 ### Build the example
 
