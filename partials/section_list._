@@ -1,17 +1,15 @@
-<dl class="ecl-accordion" role="presentation">
+<section class='ecl-u-clearfix ecl-u-pv-xs'>
   <% members.forEach(function(member) { %>
-    <dt role="heading">
-      <button id='<%- slug(member.namespace) %>' class="ecl-accordion__header" aria-controls='<%- slug(member.namespace) %>-panel' aria-expanded="true">
-        <%= shortSignature(member) %>
-      </button>
-    </dt>
-    <dd id='<%- slug(member.namespace) %>-panel' role="region" aria-labelledby='<%- slug(member.namespace) %>' aria-hidden="false">
+    <a id='<%- slug(member.namespace) %>' class="ecl-link ecl-expandable__button" aria-controls='<%- slug(member.namespace) %>-panel' aria-expanded="true" href="#">
+      <%= shortSignature(member) %>
+    </a>
+    <div id='<%- slug(member.namespace) %>-panel' aria-labelledby='<%- slug(member.namespace) %>' aria-hidden="false">
       <%= renderSection({
         section: member,
         renderSection: renderSection,
         renderParamProperty: renderParamProperty,
         nested: true
       }) %>
-    </dd>
+    </div>
   <% }) %>
-</dl>
+</section>

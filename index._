@@ -89,7 +89,7 @@
   <script src="assets/vendor/ecl/scripts/europa.js"></script>
   <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function() {
-  ECL.accordions();
+  ECL.initExpandables();
 });
 </script>
 </body>
