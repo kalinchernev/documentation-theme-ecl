@@ -9,6 +9,7 @@ import type { Project } from "../_types/Project";
  *
  * @memberof ProjectModuleExample
  * @param {Object} funding The funding to split
+ * @description Just a description.
  * @returns {Array} List of funding items
  *
  * @example

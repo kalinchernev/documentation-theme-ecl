@@ -1,5 +1,5 @@
-<section class='py2 ecl-u-clearfix'>
-  <h2 id='<%- slug(note.namespace) %>' class='mt0'>
+<section class='ecl-u-clearfix'>
+  <h2 class="ecl-heading ecl-heading--h2" id='<%- slug(note.namespace) %>'>
     <%- note.name %>
   </h2>
   <% if (note.description) { %>

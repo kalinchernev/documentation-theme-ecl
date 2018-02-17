@@ -77,7 +77,7 @@
                     renderParamProperty: renderParamProperty
                   }) %>
                   <% } else { %>
-          <div class="keyline-top-not py2">
+          <div>
             <%= renderNote({ note: s })%>
           </div><% } %><% }) %>
         </section>
@@ -87,5 +87,10 @@
   <%= renderFooter() %>
   <script src="assets/bundle/main.js"></script>
   <script src="assets/vendor/ecl/scripts/europa.js"></script>
+  <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+  ECL.accordions();
+});
+</script>
 </body>
 </html>

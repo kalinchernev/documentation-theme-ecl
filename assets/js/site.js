@@ -48,26 +48,6 @@ document.getElementById("filter-input").addEventListener("keyup", function(e) {
   }
 });
 
-const items = document.getElementsByClassName("toggle-sibling");
-for (let j = 0; j < items.length; j++) {
-  items[j].addEventListener("click", toggleSibling);
-}
-
-function toggleSibling() {
-  const stepSibling = this.parentNode.getElementsByClassName(
-    "toggle-target"
-  )[0];
-  const icon = this.getElementsByClassName("icon")[0];
-  const klass = "ecl-u-d-none";
-  if (stepSibling.classList.contains(klass)) {
-    stepSibling.classList.remove(klass);
-    icon.innerHTML = "▾";
-  } else {
-    stepSibling.classList.add(klass);
-    icon.innerHTML = "▸";
-  }
-}
-
 function showHashTarget(targetId) {
   if (targetId) {
     const hashTarget = document.getElementById(targetId);
