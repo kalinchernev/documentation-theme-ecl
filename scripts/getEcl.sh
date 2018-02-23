@@ -9,9 +9,12 @@ rm -rf assets/vendor
 echo 'Getting ECL version 0.23.0'
 wget https://github.com/ec-europa/europa-component-library/releases/download/v0.23.0/framework.zip
 
-echo 'De-compression ...'
-unzip framework.zip
-
-echo 'And moving the assets in the assets/ folder'
+echo 'Moving ecl build into right folder'
 mkdir assets/vendor
-mv framework assets/vendor/ecl
+mkdir assets/vendor/ecl
+mv framework.zip assets/vendor/ecl/ecl.zip
+
+echo 'De-compression ...'
+cd assets/vendor/ecl
+unzip ecl.zip
+rm ecl.zip

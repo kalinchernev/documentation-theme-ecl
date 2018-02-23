@@ -1,8 +1,21 @@
 {
   "name": "documentation-theme-ecl",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "ECL theme for documentation.js",
   "main": "index.js",
+  "keywords": [
+    "documentation",
+    "europa component library"
+  ],
+  "author": "Kalin Chernev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalinchernev/documentation-theme-ecl"
+  },
+  "bugs": {
+    "url": "https://github.com/kalinchernev/documentation-theme-ecl/issues"
+  },
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "documentation build example/src --theme . -f html -o ./dist",
