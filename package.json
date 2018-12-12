@@ -1,6 +1,6 @@
 {
   "name": "documentation-theme-ecl",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "ECL theme for documentation.js",
   "main": "index.js",
   "keywords": [
@@ -18,15 +18,10 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist ./assets/bundle",
-    "build": "documentation build example/src --theme . -f html -o ./dist",
-    "bundle": "webpack",
-    "develop": "run-p develop:*",
-    "develop:theme": "documentation build --watch ./example/src **/*._ *._ ./assets/js ./assets/styles --theme . -f html -o ./dist",
-    "server:watch": "reload -d ./dist",
     "develop:assets": "webpack -w",
-    "dist": "run-s clean bundle build",
-    "lint": "eslint .",
-    "start": "run-s clean bundle build develop"
+    "develop:theme": "documentation serve --watch **/_types/*.js **/lib/helper.js **/*._ --theme .",
+    "develop:server": "reload -d ./dist",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@ecl/ec-preset-website": "2.0.0",

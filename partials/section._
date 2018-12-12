@@ -121,7 +121,7 @@
   <h4 class="ecl-u-type-heading-4">Example</h4>
   <% section.examples.forEach(function(example) { %>
     <% if (example.caption) { %><p class="ecl-u-type-paragraph-s"><%= md(example.caption) %></p><% } %>
-    <pre style="background-color: #f5f5f5;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
+    <pre style="background-color: #f5f5f5; overflow-x: scroll;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
   <% }) %>
 <% } %>
 

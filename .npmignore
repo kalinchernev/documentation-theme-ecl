@@ -1,10 +1,20 @@
+# Configuration files
 .editorconfig
 .eslintignore
 .eslintrc
 .gitattributes
 .gitignore
 .babelrc
+.prettierignore
+
+# Useful only locally when developing
+assets/js
+assets/styles
+assets/index.js
+example
+dist
+webpack.config.js
+
+# Others
 __tests__
 __MACOSX
-dist
-example

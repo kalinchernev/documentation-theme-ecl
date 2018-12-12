@@ -1,8 +1,2 @@
-node_modules
-assets/bundle
-assets/vendor
 dist
-example/app
-framework.zip
-framework
-__MACOSX
+node_modules
