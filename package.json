@@ -25,13 +25,11 @@
     "develop:server": "reload -d ./dist",
     "develop:assets": "webpack -w",
     "dist": "run-s clean bundle build",
-    "get:ecl": "./scripts/getEcl.sh",
     "lint": "eslint .",
-    "prepublish": "npm run get:ecl",
-    "start": "run-s clean get:ecl bundle build develop"
+    "start": "run-s clean bundle build develop"
   },
   "dependencies": {
-    "@ec-europa/ecl-preset-full": "0.6.0",
+    "@ecl/ec-preset-website": "2.0.0",
     "anchor-js": "4.1.0",
     "concat-stream": "1.6.0",
     "documentation": "5.3.5",
@@ -39,8 +37,8 @@
     "highlight.js": "9.12.0",
     "lodash": "4.17.5",
     "normalize.css": "7.0.0",
-    "vinyl-fs": "3.0.2",
-    "vinyl": "2.1.0"
+    "vinyl": "2.1.0",
+    "vinyl-fs": "3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "7.2.5",
@@ -50,12 +48,12 @@
     "babel-preset-flow": "6.23.0",
     "css-loader": "0.28.9",
     "cssnano": "3.10.0",
+    "eslint": "4.17.0",
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-flowtype": "2.43.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-prettier": "2.6.0",
-    "eslint": "4.17.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.6",
     "node-sass": "4.7.2",
