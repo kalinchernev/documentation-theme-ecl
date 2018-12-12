@@ -1,7 +1,7 @@
 <li class='ecl-list-item ecl-u-pv-m'>
   <% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
     <% if (typeof nested === 'undefined') { %>
-    <h3 class='ecl-heading ecl-heading--h3' id='<%- slug(section.namespace) %>'>
+    <h3 class='ecl-u-type-heading-3' id='<%- slug(section.namespace) %>'>
       <%- section.name %>
     </h3>
     <% } %>

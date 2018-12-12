@@ -1,30 +1,45 @@
-<header class="ecl-site-header" role="banner">
-  <div class="ecl-site-switcher">
-    <ul class="ecl-site-switcher__list ecl-container">
+<div class="ecl-site-switcher ecl-site-switcher--header">
+  <div class="ecl-container ecl-site-switcher__container">
+    <ul class="ecl-site-switcher__list">
       <li class="ecl-site-switcher__option">
-        <a class="ecl-link ecl-site-switcher__link" href=
-        "#">Commission and its priorities</a>
+        <a
+          href="https://ec.europa.eu/commission/index_en"
+          class="ecl-site-switcher__link ecl-link"
+          >Commission and its priorities</a
+        >
       </li>
-      <li class=
-      "ecl-site-switcher__option ecl-site-switcher__option--is-selected">
-        <a class="ecl-link ecl-site-switcher__link" href=
-        "#">Policies, information and services</a>
+      <li
+        class="ecl-site-switcher__option ecl-site-switcher__option--is-selected"
+      >
+        <a
+          href="https://ec.europa.eu/info/index_en"
+          class="ecl-site-switcher__link ecl-link"
+          >Policies, information and services</a
+        >
       </li>
     </ul>
   </div>
-  <div class="ecl-container">
-    <a href="https://ec.europa.eu" class=
-    "ecl-logo ecl-logo--logotype ecl-site-header__logo ecl-u-mb-s ecl-u-mt-s"
-    title="Home - European Commission"><span class=
-    "ecl-u-sr-only">Home - European Commission</span></a>
+</div>
+<header class="ecl-site-header">
+  <div class="ecl-site-header__container ecl-container">
+    <div class="ecl-site-header__banner">
+      <a
+        class="ecl-link ecl-link--standalone"
+        href="/example"
+        aria-label="European Commission"
+        ><img
+          alt="European Commission logo"
+          title="European Commission"
+          class="ecl-site-header__logo-image"
+          src="../assets/images/logo--en.svg"
+      /></a>
+    </div>
   </div>
 </header>
+
 <div class="ecl-page-header">
-  <div class="ecl-container">
-    <div class="ecl-page-header__body">
-      <div class="ecl-page-header__identity">
-        <%- config["project-name"] %>
-      </div>
-    </div>
+  <div class="ecl-container ecl-u-pt-m">
+    <h1 class="ecl-page-header__title"><%- config["project-name"] %></h1>
+    <p class="ecl-page-header__description"><%- config["project-description"] %></p>
   </div>
 </div>

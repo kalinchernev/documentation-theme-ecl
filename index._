@@ -26,19 +26,15 @@
   <link href="assets/bundle/main.css" type="text/css" rel="stylesheet">
 </head>
 <body class="language-en">
-  <div class="ecl-skip-link__wrapper" id="skip-link">
-    <a href="#main-content" class="ecl-skip-link">Skip to main content</a>
-  </div>
   <%= renderHeader({ config }) %>
   <main>
-    <a id="main-content" tabindex="-1"></a>
     <div class="ecl-container ecl-u-mv-l">
       <div class="ecl-row">
         <aside class="ecl-col-lg-3" role="complementary">
-          <h3 class="ecl-heading ecl-heading--h3">Filter</h3>
+          <h3 class="ecl-u-type-heading-3">Filter</h3>
           <input placeholder="Filter" id="filter-input"
           type="text" class="ecl-text-input" name="filter-input">
-          <h3 class="ecl-heading ecl-heading--h3">Interfaces</h3>
+          <h3 class="ecl-u-type-heading-3">Interfaces</h3>
           <div class="ecl-link-block" id="toc">
             <ul class="ecl-link-block__list">
               <% docs.forEach(function(doc) { %>

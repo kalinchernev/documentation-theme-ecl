@@ -128,8 +128,8 @@ module.exports = (comments, config) => {
       .src(
         [
           `${__dirname}/assets/bundle/**`,
-          `${__dirname}/assets/vendor/**`,
-          `${__dirname}/assets/favicon/**`
+          `${__dirname}/assets/favicon/**`,
+          `${__dirname}/assets/images/**`
         ],
         {
           base: __dirname
@@ -141,7 +141,7 @@ module.exports = (comments, config) => {
             files.concat(
               new File({
                 path: "index.html",
-                contents: new Buffer(
+                contents: Buffer.from(
                   pageTemplate({
                     docs: comments,
                     config
