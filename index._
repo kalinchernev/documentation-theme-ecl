@@ -81,10 +81,5 @@
   </main>
   <%= renderFooter() %>
   <script src="assets/bundle/main.js"></script>
-  <script type="text/javascript">
-  document.addEventListener("DOMContentLoaded", function() {
-  ECL.initExpandables();
-});
-</script>
 </body>
 </html>

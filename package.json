@@ -17,7 +17,7 @@
     "url": "https://github.com/kalinchernev/documentation-theme-ecl/issues"
   },
   "scripts": {
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist ./assets/bundle",
     "build": "documentation build example/src --theme . -f html -o ./dist",
     "bundle": "webpack",
     "develop": "run-p develop:*",

@@ -126,9 +126,7 @@
 <% } %>
 
 <% if (section.members.static && section.members.static.length) { %>
-  <ul>
   <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty}) %>
-  </ul>
 <% } %>
 
 <% if (section.members.instance && section.members.instance.length) { %>
