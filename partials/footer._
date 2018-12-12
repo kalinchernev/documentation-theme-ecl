@@ -1,128 +1,102 @@
 <footer class="ecl-footer">
-  <div class="ecl-footer__site-corporate">
+  <div class="ecl-footer__sections">
     <div class="ecl-container">
       <div class="ecl-row">
-        <div class="ecl-col-sm ecl-footer__column">
-          <h4 class="ecl-h4 ecl-footer__title">European Commission</h4>
-
-          <ul class="ecl-footer__menu">
-            <li class="ecl-footer__menu-item">
+        <section class="ecl-footer__section ecl-col-12 ecl-col-md-4">
+          <h1 class="ecl-footer__section-title">European Commission</h1>
+          <ul class="ecl-footer__section-list">
+            <li class="ecl-footer__section-item">
               <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
                 href="https://ec.europa.eu/commission/index_en"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone"
+                >Commission and its priorities</a
               >
-                Commission and its priorities
-              </a>
             </li>
-            <li class="ecl-footer__menu-item">
+            <li class="ecl-footer__section-item">
               <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
                 href="https://ec.europa.eu/info/index_en"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone"
+                >Policies, information and services</a
               >
-                Policies information and services
-              </a>
             </li>
           </ul>
-        </div>
-        <div class="ecl-col-sm ecl-footer__column">
-          <h4 class="ecl-h4 ecl-footer__title">
+        </section>
+        <section class="ecl-footer__section ecl-col-12 ecl-col-md-4">
+          <h1 class="ecl-footer__section-title">
             Follow the European Commission
-          </h4>
-
-          <ul class="ecl-footer__menu ecl-list--inline ecl-footer__social-links">
-            <li class="ecl-footer__menu-item">
-              <a class="ecl-link ecl-link--inverted ecl-footer__link" href="#">
-                <span class="ecl-icon ecl-icon--facebook ecl-footer__social-icon" />Facebook
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
-              <a class="ecl-link ecl-link--inverted ecl-footer__link" href="#">
-                <span class="ecl-icon ecl-icon--twitter ecl-footer__social-icon" />Twitter
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
+          </h1>
+          <ul class="ecl-footer__section-list ecl-footer__section-list--inline">
+            <li class="ecl-footer__section-item">
               <a
-                class="ecl-link ecl-link--inverted ecl-link--external ecl-footer__link"
-                href="#"
-              >
-                Other social media
-              </a>
+                href="https://www.facebook.com/EuropeanCommission"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-before"
+                ><span class="ecl-link__label">Facebook</span></a>
+            </li>
+            <li class="ecl-footer__section-item">
+              <a
+                href="https://twitter.com/EU_commission"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-before"
+                ><span class="ecl-link__label">Twitter</span></a>
+            </li>
+            <li class="ecl-footer__section-item">
+              <a
+                href="https://europa.eu/european-union/contact/social-networks_en"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"
+                ><span class="ecl-link__label">Other social networks</span></a>
             </li>
           </ul>
-        </div>
-        <div class="ecl-col-sm ecl-footer__column">
-          <h4 class="ecl-h4 ecl-footer__title">European Union</h4>
-
-          <ul class="ecl-footer__menu">
-            <li class="ecl-footer__menu-item">
+        </section>
+        <section class="ecl-footer__section ecl-col-12 ecl-col-md-4">
+          <h1 class="ecl-footer__section-title">European Union</h1>
+          <ul class="ecl-footer__section-list">
+            <li class="ecl-footer__section-item">
               <a
-                class="ecl-link ecl-link--inverted ecl-link--external ecl-footer__link"
-                href="#"
-              >
-                EU institutions
-              </a>
+                href="https://europa.eu/european-union/index_en"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"
+                ><span class="ecl-link__label">European Union</span></a>
             </li>
-            <li class="ecl-footer__menu-item">
+            <li class="ecl-footer__section-item">
               <a
-                class="ecl-link ecl-link--inverted ecl-link--external ecl-footer__link"
-                href="#"
-              >
-                European Union
-              </a>
+                href="https://europa.eu/european-union/about-eu/institutions-bodies_en"
+                class="ecl-footer__section-link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"
+                ><span class="ecl-link__label">EU institutions</span></a>
             </li>
           </ul>
-        </div>
+        </section>
       </div>
     </div>
   </div>
-  <div class="ecl-footer__ec">
-    <div class="ecl-container">
-      <div class="ecl-row">
-        <div class="ecl-col-sm ">
-          <ul class="ecl-list--inline ecl-footer__menu">
-            <li class="ecl-footer__menu-item">
-              <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
-                href="http://ec.europa.eu/info/about-commissions-new-web-presence_en"
-              >
-                About the Commission's new web presence
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
-              <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
-                href="http://ec.europa.eu/info/resources-partners_en"
-              >
-                Resources for partners
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
-              <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
-                href="http://ec.europa.eu/info/cookies_en"
-              >
-                Cookies
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
-              <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
-                href="http://ec.europa.eu/info/legal-notice_en"
-              >
-                Legal notice
-              </a>
-            </li>
-            <li class="ecl-footer__menu-item">
-              <a
-                class="ecl-link ecl-link--inverted ecl-footer__link"
-                href="http://ec.europa.eu/info/contact_en"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <section class="ecl-footer__common">
+    <div class="ecl-container ecl-footer__common-container">
+      <a
+        href="https://ec.europa.eu/info/about-commissions-new-web-presence_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >About the Commission's new web presence</a
+      ><a
+        href="https://ec.europa.eu/info/language-policy_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Language policy</a
+      ><a
+        href="http://ec.europa.eu/info/resources-partners_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Resources for partners</a
+      ><a
+        href="https://ec.europa.eu/info/cookies_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Cookies</a
+      ><a
+        href="https://ec.europa.eu/info/privacy-policy_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Privacy policy</a
+      ><a
+        href="https://ec.europa.eu/info/legal-notice_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Legal notice</a
+      ><a
+        href="https://ec.europa.eu/info/contact_en"
+        class="ecl-footer__common-link ecl-link ecl-link--standalone"
+        >Contact</a
+      >
     </div>
-  </div>
+  </section>
 </footer>

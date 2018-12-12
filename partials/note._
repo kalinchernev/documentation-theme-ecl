@@ -1,8 +1,8 @@
 <section class='ecl-u-clearfix'>
-  <h2 class="ecl-heading ecl-heading--h2" id='<%- slug(note.namespace) %>'>
+  <h2 class="ecl-u-type-heading-2" id='<%- slug(note.namespace) %>'>
     <%- note.name %>
   </h2>
   <% if (note.description) { %>
-    <%= md(note.description) %>
+    <p class="ecl-u-type-paragraph-s"><%= note.description %></p>
   <% } %>
 </section>

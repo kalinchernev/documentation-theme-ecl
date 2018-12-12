@@ -1,142 +1,140 @@
-<li class='ecl-list-item ecl-u-pv-m'>
-  <% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
-    <% if (typeof nested === 'undefined') { %>
-    <h3 class='ecl-u-type-heading-3' id='<%- slug(section.namespace) %>'>
-      <%- section.name %>
-    </h3>
-    <% } %>
-    <% if (section.context && section.context.github) { %>
-      <a class='ecl-link' href='<%= section.context.github.url %>'>
-        <%= section.context.github.path %>
-      </a>
-    <% } %>
+<% if (typeof nested === 'undefined' || (section.context && section.context.github)) { %>
+  <% if (typeof nested === 'undefined') { %>
+  <h3 class='ecl-u-type-heading-3' id='<%- slug(section.namespace) %>'>
+    <%- section.name %>
+  </h3>
   <% } %>
-
-  <%= md(section.description) %>
-
-  <% if (section.augments.length) { %>
-    <p class="ecl-paragraph">
-      Extends
-      <% if (section.augments) { %>
-        <%= section.augments.map(function(tag) {
-	         return autolink(tag.name);
-	         }).join(', ') %>
-      <% } %>
-    </p>
+  <% if (section.context && section.context.github) { %>
+    <a class='ecl-link' href='<%= section.context.github.url %>'>
+      <%= section.context.github.path %>
+    </a>
   <% } %>
+<% } %>
 
-  <% if (section.deprecated) { %><div>Deprecated: <%= md(section.deprecated, true) %></div><% }%>
-  <% if (section.version) { %><div>Version: <%- section.version %></div><% }%>
-  <% if (section.license) { %><div>License: <%- section.license %></div><% }%>
-  <% if (section.author) { %><div>Author: <%- section.author %></div><% }%>
-  <% if (section.copyright) { %><div>Copyright: <%= md(section.copyright, true) %></div><% }%>
-  <% if (section.since) { %><div>Since: <%- section.since %></div><% }%>
+<% md(section.description) %>
 
-  <% if (section.params.length) { %>
-    <h4 class="ecl-heading ecl-heading--h4">Parameters</h4>
-    <p class='ecl-paragraph'>
-      <ul class="ecl-list">
-      <% section.params.forEach(function(param) { %>
-        <li><%- param.name%> (<%= formatType(param.type) %><% if (param.default) { %>
-            = <%- param.default %><% } %>)
-	        <%= md(param.description, true) %>
-          <% if (param.properties && param.properties.length) { %>
-          <table class='ecl-table'>
-            <colgroup>
-              <col width='30%' />
-              <col width='70%' />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% param.properties.forEach(function(property) { %>
-                <%= renderParamProperty({
-                  property: property,
-                  renderParamProperty: renderParamProperty
-                }) %>
-              <% }) %>
-            </tbody>
-          </table>
+<% if (section.augments.length) { %>
+  <p class="ecl-u-type-paragraph-s">
+    Extends
+    <% if (section.augments) { %>
+      <%= section.augments.map(function(tag) {
+         return autolink(tag.name);
+         }).join(', ') %>
+    <% } %>
+  </p>
+<% } %>
+
+<% if (section.deprecated) { %><div>Deprecated: <%= md(section.deprecated, true) %></div><% }%>
+<% if (section.version) { %><div>Version: <%- section.version %></div><% }%>
+<% if (section.license) { %><div>License: <%- section.license %></div><% }%>
+<% if (section.author) { %><div>Author: <%- section.author %></div><% }%>
+<% if (section.copyright) { %><div>Copyright: <%= md(section.copyright, true) %></div><% }%>
+<% if (section.since) { %><div>Since: <%- section.since %></div><% }%>
+
+<% if (section.params.length) { %>
+  <h4 class="ecl-u-type-heading-4">Parameters</h4>
+  <p class='ecl-u-type-paragraph-s'>
+    <ul>
+    <% section.params.forEach(function(param) { %>
+      <li><%- param.name%> (<%= formatType(param.type) %><% if (param.default) { %>
+          = <%- param.default %><% } %>)
+        <%= md(param.description, true) %>
+        <% if (param.properties && param.properties.length) { %>
+        <table class='ecl-table'>
+          <colgroup>
+            <col width='30%' />
+            <col width='70%' />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% param.properties.forEach(function(property) { %>
+              <%= renderParamProperty({
+                property: property,
+                renderParamProperty: renderParamProperty
+              }) %>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } %>
+      </li>
+    <% }) %>
+    </ul>
+  </p>
+<% } %>
+
+<% if (section.properties.length) { %>
+  <h4 class="ecl-u-type-heading-4">Properties</h4>
+    <ul>
+      <% section.properties.forEach(function(property) { %>
+        <li>
+          <%- property.name%> (<%= formatType(property.type) %>)
+          <% if (property.default) { %>
+            (default <%- property.default %>)
           <% } %>
-        </li>
-      <% }) %>
-      </ul>
-    </p>
-  <% } %>
-
-  <% if (section.properties.length) { %>
-    <h4 class="ecl-heading ecl-heading--h4">Properties</h4>
-      <ul class="ecl-list">
-        <% section.properties.forEach(function(property) { %>
-          <li>
-            <%- property.name%> (<%= formatType(property.type) %>)
-            <% if (property.default) { %>
-              (default <%- property.default %>)
-            <% } %>
-            <% if (property.description) { %>:
-              <%= md(property.description, true) %><%
-	          } %>
-            <% if (property.properties && property.properties.length) { %>
-              <ul class='ecl-list'>
-                <% property.properties.forEach(function(property) { %>
-                  <li>
-                    <%- property.name %>
-                    <%= formatType(property.type) %>
-                    <% if (property.default) { %>
-                      (default <%- property.default %>)
-                    <% } %>
-                    <%= md(property.description) %>
-                  </li>
-                <% }) %>
-              </ul>
-            <% } %>
-        </li>
-      <% }) %>
-      </ul>
-  <% } %>
-
-  <% if (section.returns.length) { %>
-    <% section.returns.forEach(function(ret) { %>
-      <h4 class="ecl-heading ecl-heading--h4">Returns</h4>
-      <%= formatType(ret.type) %>
-      <% if (ret.description) { %>:
-        <%= md(ret.description, true) %>
-      <% }%>
+          <% if (property.description) { %>:
+            <%= md(property.description, true) %><%
+          } %>
+          <% if (property.properties && property.properties.length) { %>
+            <ul>
+              <% property.properties.forEach(function(property) { %>
+                <li>
+                  <%- property.name %>
+                  <%= formatType(property.type) %>
+                  <% if (property.default) { %>
+                    (default <%- property.default %>)
+                  <% } %>
+                  <%= md(property.description) %>
+                </li>
+              <% }) %>
+            </ul>
+          <% } %>
+      </li>
     <% }) %>
-  <% } %>
-
-  <% if (section.throws.length) { %>
-    <h4 class="ecl-heading ecl-heading--h4">Throws</h4>
-    <ul class="ecl-list">
-      <% section.throws.forEach(function(throws) { %>
-        <li><%= formatType(throws.type) %>: <%= md(throws.description, true) %></li>
-      <% }); %>
     </ul>
-  <% } %>
+<% } %>
 
-  <% if (section.examples.length) { %>
-    <h4 class="ecl-heading ecl-heading--h4">Example</h4>
-    <% section.examples.forEach(function(example) { %>
-      <% if (example.caption) { %><p class="ecl-paragraph"><%= md(example.caption) %></p><% } %>
-      <pre style="background-color: #f5f5f5;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
-    <% }) %>
-  <% } %>
+<% if (section.returns.length) { %>
+  <% section.returns.forEach(function(ret) { %>
+    <h4 class="ecl-u-type-heading-4">Returns</h4>
+    <%= formatType(ret.type) %>
+    <% if (ret.description) { %>:
+      <%= md(ret.description, true) %>
+    <% }%>
+  <% }) %>
+<% } %>
 
-  <% if (section.members.static && section.members.static.length) { %>
-    <ul class="ecl-list">
-    <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty}) %>
-    </ul>
-  <% } %>
+<% if (section.throws.length) { %>
+  <h4 class="ecl-u-type-heading-4">Throws</h4>
+  <ul>
+    <% section.throws.forEach(function(throws) { %>
+      <li><%= formatType(throws.type) %>: <%= md(throws.description, true) %></li>
+    <% }); %>
+  </ul>
+<% } %>
 
-  <% if (section.members.instance && section.members.instance.length) { %>
-    <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
-  <% } %>
+<% if (section.examples.length) { %>
+  <h4 class="ecl-u-type-heading-4">Example</h4>
+  <% section.examples.forEach(function(example) { %>
+    <% if (example.caption) { %><p class="ecl-u-type-paragraph-s"><%= md(example.caption) %></p><% } %>
+    <pre style="background-color: #f5f5f5;" class="ecl-u-pa-xs"><%= highlight(example.description) %></pre>
+  <% }) %>
+<% } %>
 
-  <% if (section.members.events && section.members.events.length) { %>
-    <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
-  <% } %>
-</li>
+<% if (section.members.static && section.members.static.length) { %>
+  <ul>
+  <%= renderSectionList({ members: section.members.static, renderSection: renderSection, renderParamProperty: renderParamProperty}) %>
+  </ul>
+<% } %>
+
+<% if (section.members.instance && section.members.instance.length) { %>
+  <%= renderSectionList({ members: section.members.instance, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Instance Member' }) %>
+<% } %>
+
+<% if (section.members.events && section.members.events.length) { %>
+  <%= renderSectionList({ members: section.members.events, renderSection: renderSection, renderParamProperty: renderParamProperty, noun: 'Event' }) %>
+<% } %>
