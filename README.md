@@ -10,6 +10,7 @@ The theme is ready to accept the following options from your configuration:
 
 - `project-name`
 - `project-description`
+- `project-url`
 
 ## Usage
 

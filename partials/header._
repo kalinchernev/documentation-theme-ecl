@@ -25,7 +25,7 @@
     <div class="ecl-site-header__banner">
       <a
         class="ecl-link ecl-link--standalone"
-        href="/example"
+        href="<%- config["project-url"] %>"
         aria-label="European Commission"
         ><img
           alt="European Commission logo"
