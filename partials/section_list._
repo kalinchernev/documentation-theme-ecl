@@ -1,8 +1,8 @@
 <section class='ecl-u-clearfix ecl-u-pt-xs'>
   <% members.forEach(function(member) { %>
-  <span id='<%- slug(member.namespace) %>'>
+  <h4 class='ecl-u-type-heading-4' id='<%- slug(member.namespace) %>'>
     <%= shortSignature(member) %>
-  </span>
+  </h4>
     <div id='<%- slug(member.namespace) %>-panel'>
       <%= renderSection({
         section: member,
